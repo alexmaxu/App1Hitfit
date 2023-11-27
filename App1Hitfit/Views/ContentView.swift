@@ -10,10 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("HitFit App!")
+            WelcomeView()
+            Text("To HitFit App!")
+            Spacer()
+            HStack {
+                Text("Get Fit My Friend")
+            }
+            Spacer()
         }
         .padding()
     }
