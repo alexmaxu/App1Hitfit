@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var selectedTab: Int
     var body: some View {
         ZStack {
             VStack {
@@ -62,5 +63,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    WelcomeView(selectedTab: .constant(9))
 }

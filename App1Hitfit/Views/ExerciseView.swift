@@ -8,12 +8,13 @@
 import SwiftUI
 import AVKit
 struct ExerciseView: View {
+    @Binding var selectedTab: Int
     let index: Int
     let interval: TimeInterval = 30
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HeaderView(index: index)
+                HeaderView(index: index, selectedTab: $selectedTab)
                     .padding(.top, 15.0)
                 Spacer()
                 Text("VIDEO PANEL \(index)")
@@ -37,5 +38,5 @@ struct ExerciseView: View {
 }
 
 #Preview {
-    ExerciseView(index: 0)
+    ExerciseView(selectedTab: .constant(9), index: 0)
 }

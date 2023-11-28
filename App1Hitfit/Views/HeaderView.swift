@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     var index: Int
+    @Binding var selectedTab: Int
     var body: some View {
         VStack {
             Text(Exercise.exercises[index].exerciseName)
@@ -16,15 +17,16 @@ struct HeaderView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.orange)
             HStack {
-                Image(systemName: "1.circle")
-                Image(systemName: "2.circle")
-                Image(systemName: "3.circle")
-                Image(systemName: "4.circle")
+                ForEach(Exercise.exercises.indices, id: \.self) { index in
+                    let fill = index == selectedTab ? ".fill" : ""
+                    Image(systemName: "\(index+1).circle\(fill)")
+                   
+                }
             }
         }
     }
 }
 
 #Preview {
-    HeaderView(index: 0)
+    HeaderView(index: 0, selectedTab: .constant(0))
 }
