@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 struct ExerciseView: View {
+    let interval: TimeInterval = 30
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -23,8 +24,9 @@ struct ExerciseView: View {
                 Text("VIDEO PANEL")
                 VideoPlayerView()
                     .frame(height: geometry.size.height * 0.45)
-                Spacer()
-                Text("Temporizador")
+                
+                Text(Date().addingTimeInterval(interval), style: .timer)
+                  .font(.system(size: geometry.size.height * 0.07))
                 Spacer()
                 HStack {
                     Text("Start Exercise")
