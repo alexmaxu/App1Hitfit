@@ -8,34 +8,28 @@
 import SwiftUI
 import AVKit
 struct ExerciseView: View {
+    let index: Int
     let interval: TimeInterval = 30
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Text("ExerciseNAme")
-                    .font(.title)
-                HStack {
-                    Image(systemName: "1.circle")
-                    Image(systemName: "2.circle")
-                    Image(systemName: "3.circle")
-                    Image(systemName: "4.circle")
-                }
+                HeaderView(index: index)
+                    .padding(.top, 15.0)
                 Spacer()
-                Text("VIDEO PANEL")
-                VideoPlayerView()
+                Text("VIDEO PANEL \(index)")
+                VideoPlayerView(index: index)
                     .frame(height: geometry.size.height * 0.45)
-                
                 Text(Date().addingTimeInterval(interval), style: .timer)
                   .font(.system(size: geometry.size.height * 0.07))
                 Spacer()
-                HStack {
-                    Text("Start Exercise")
-                    Text("Done")
+                HStack(spacing: 150){
+                    Button("Start Exercise") {}
+                    Button("Done") {}
                 }
                 Spacer()
                 Text("Symbol energy")
                 Spacer()
-                Text("History")
+                Button("History") {}
                 
             }
         }
@@ -43,5 +37,5 @@ struct ExerciseView: View {
 }
 
 #Preview {
-    ExerciseView()
+    ExerciseView(index: 0)
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
+    var index: Int
     var body: some View {
         VStack {
-            Text("Welcome")
-                .font(.largeTitle)
+            Text(Exercise.exercises[index].exerciseName)
+                .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.orange)
             HStack {
@@ -25,5 +26,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(index: 0)
 }

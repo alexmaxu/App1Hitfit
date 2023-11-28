@@ -11,10 +11,21 @@ struct WelcomeView: View {
     var body: some View {
         ZStack {
             VStack {
-                HeaderView()
+                VStack {
+                    Text("Welcome")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.orange)
+                    HStack {
+                        Image(systemName: "1.circle")
+                        Image(systemName: "2.circle")
+                        Image(systemName: "3.circle")
+                        Image(systemName: "4.circle")
+                    }
+                }
                 Text("To HitFit App!")
-                Button("History") {}
                 Spacer()
+                Button("History") {}
             }
             VStack {
                 
