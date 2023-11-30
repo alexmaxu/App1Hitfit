@@ -19,7 +19,9 @@ struct HeaderView: View {
             HStack {
                 ForEach(Exercise.exercises.indices, id: \.self) { index in
                     let fill = index == selectedTab ? ".fill" : ""
-                    Image(systemName: "\(index+1).circle\(fill)")
+                    Image(systemName: "\(index+1).circle\(fill)").onTapGesture {
+                        selectedTab = index
+                    }
                    
                 }
             }
