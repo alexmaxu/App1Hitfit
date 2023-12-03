@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F8DDF942B1C7182007A64CC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DDF932B1C7182007A64CC /* TimerView.swift */; };
 		5FCC2EDF2B14AC6700131C50 /* App1HitfitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC2EDE2B14AC6700131C50 /* App1HitfitApp.swift */; };
 		5FCC2EE12B14AC6700131C50 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC2EE02B14AC6700131C50 /* WelcomeView.swift */; };
 		5FCC2EE32B14AC6900131C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC2EE22B14AC6900131C50 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F8DDF932B1C7182007A64CC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5FCC2EDB2B14AC6700131C50 /* App1Hitfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App1Hitfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCC2EDE2B14AC6700131C50 /* App1HitfitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1HitfitApp.swift; sourceTree = "<group>"; };
 		5FCC2EE02B14AC6700131C50 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5FCC2EED2B14AE6900131C50 /* HeaderView.swift */,
 				5FFDA7EB2B1723E900051D4B /* HistoryView.swift */,
 				5FFDA7F12B17353B00051D4B /* SuccesView.swift */,
+				5F8DDF932B1C7182007A64CC /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8DDF942B1C7182007A64CC /* TimerView.swift in Sources */,
 				5FFDA7F22B17353B00051D4B /* SuccesView.swift in Sources */,
 				5FFDA7F02B172B0C00051D4B /* HistoryStoreDevData.swift in Sources */,
 				5FFDA7F42B17365700051D4B /* ImageExtension.swift in Sources */,

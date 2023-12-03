@@ -11,8 +11,10 @@ struct ExerciseView: View {
     @Binding var selectedTab: Int
     @State private var showHistory = false
     @State private var showSuccess = false
+    @State private var showDone = false
+    @State private var showTimer = false
     let index: Int
-    let interval: TimeInterval = 30
+    let interval: TimeInterval = 3
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -25,20 +27,27 @@ struct ExerciseView: View {
                 }
                 VideoPlayerView(index: index)
                     .frame(height: geometry.size.height * 0.45)
-                Text(Date().addingTimeInterval(interval), style: .timer)
-                  .font(.system(size: geometry.size.height * 0.07))
                 Spacer()
                 HStack(spacing: 150){
-                    Button("Start Exercise") {}
+                    Button("Start Exercise") {
+                        showTimer.toggle()
+                    }
                     Button("Done") {
                         if selectedTab + 1 == Exercise.exercises.count {
                             showSuccess.toggle()
                         } else {
                             selectedTab += 1
                         }
-                    }.sheet(isPresented: $showSuccess) {
-                        SuccesView(selectedTab: $selectedTab)
                     }
+                    .disabled(!showDone)
+                    .sheet(isPresented: $showSuccess) {
+                        SuccesView(selectedTab: $selectedTab)
+                    
+                    }
+                }
+                Spacer()
+                if showTimer {
+                    TimerView(showDone: $showDone, size: geometry.size.height * 0.07)
                 }
                 Spacer()
                 Text("Symbol energy")
